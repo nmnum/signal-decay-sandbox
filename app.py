@@ -405,8 +405,8 @@ else:
 
         | Regime | Signal | Volatility |
         |---|---|---|
-        | 0 — Momentum | y = +0.8x + ε | Low (σ₀) |
-        | 1 — Mean-Revert | y = −0.8x + ε | Medium (σ₁) |
-        | 2 — Dead Signal | y = ε only | High (σ₂) |
+        | 0: Momentum | y = +0.8x + ε | Low (σ₀) |
+        | 1: Mean-Revert | y = −0.8x + ε | Medium (σ₁) |
+        | 2: Dead Signal | y = ε only | High (σ₂) |
         """
     )
