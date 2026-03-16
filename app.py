@@ -78,9 +78,9 @@ st.sidebar.title("⚙️ Simulation Controls")
 st.sidebar.markdown("---")
 
 st.sidebar.subheader("Regime Durations (steps)")
-dur0 = st.sidebar.slider("Regime 0 — Momentum", 100, 600, 333, step=10)
-dur1 = st.sidebar.slider("Regime 1 — Mean-Revert", 100, 600, 333, step=10)
-dur2 = st.sidebar.slider("Regime 2 — Dead Signal", 100, 600, 334, step=10)
+dur0 = st.sidebar.slider("Regime 0: Momentum", 100, 600, 333, step=10)
+dur1 = st.sidebar.slider("Regime 1: Mean-Revert", 100, 600, 333, step=10)
+dur2 = st.sidebar.slider("Regime 2: Dead Signal", 100, 600, 334, step=10)
 n_steps = dur0 + dur1 + dur2
 shift_points = [dur0, dur0 + dur1]
 
@@ -88,9 +88,9 @@ st.sidebar.markdown(f"**Total steps:** {n_steps}")
 st.sidebar.markdown("---")
 
 st.sidebar.subheader("Noise / Volatility per Regime")
-vol0 = st.sidebar.slider("σ₀ — Momentum", 0.1, 3.0, 0.5, step=0.05)
-vol1 = st.sidebar.slider("σ₁ — Mean-Revert", 0.1, 3.0, 1.0, step=0.05)
-vol2 = st.sidebar.slider("σ₂ — Dead Signal", 0.1, 3.0, 1.5, step=0.05)
+vol0 = st.sidebar.slider("σ₀: Momentum", 0.1, 3.0, 0.5, step=0.05)
+vol1 = st.sidebar.slider("σ₁: Mean-Revert", 0.1, 3.0, 1.0, step=0.05)
+vol2 = st.sidebar.slider("σ₂: Dead Signal", 0.1, 3.0, 1.5, step=0.05)
 st.sidebar.markdown("---")
 
 st.sidebar.subheader("AR-1 Feature Process")
@@ -127,7 +127,7 @@ st.markdown(
 
     | Model | Strategy |
     |---|---|
-    | **Static** | Frozen after warm-up — never adapts |
+    | **Static** | Frozen after warm-up: never adapts |
     | **Rolling** | Continuously refits on a sliding window |
     | **Unlearning** | Detects shifts via CUSUM, flushes stale memory |
 
@@ -325,7 +325,7 @@ if run_clicked:
         )
 
     with col_right:
-        st.markdown("**Unlearning Model — CUSUM Detection Summary**")
+        st.markdown("**Unlearning Model: CUSUM Detection Summary**")
         lag_rows = []
         for s_idx, sp in enumerate(shift_points):
             lag_val = det_lag[s_idx]
@@ -351,7 +351,7 @@ if run_clicked:
 
     # ---- 6. Final RMSE scoreboard ------------------------------------------
     st.markdown("---")
-    st.subheader("🏁 Final RMSE (last 100 steps — steady-state quality)")
+    st.subheader("🏁 Final RMSE (last 100 steps - steady-state quality)")
     score_cols = st.columns(3)
     for col, name in zip(score_cols, ["Static", "Rolling", "Unlearning"]):
         preds_map = {
@@ -395,10 +395,10 @@ else:
         """
         ### What this experiment measures
 
-        **Recovery Time** — how many steps after a regime shift does each model
+        **Recovery Time**: how many steps after a regime shift does each model
         need before its rolling RMSE returns to its pre-shift baseline level?
 
-        **Detection Lag** — for the Unlearning model, how many steps elapsed
+        **Detection Lag**: for the Unlearning model, how many steps elapsed
         between the true regime shift and the CUSUM alarm?
 
         **Regime characteristics**
