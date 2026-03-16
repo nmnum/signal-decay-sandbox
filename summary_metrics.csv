@@ -1,0 +1,2 @@
+trial,static_final_rmse,static_recovery_shift0,static_recovery_shift1,rolling_final_rmse,rolling_recovery_shift0,rolling_recovery_shift1,unlearning_final_rmse,unlearning_recovery_shift0,unlearning_recovery_shift1,uncertainty_final_rmse,uncertainty_recovery_shift0,uncertainty_recovery_shift1,unlearning_det_lag_shift0,uncertainty_lead_time_shift0,unlearning_det_lag_shift1,uncertainty_lead_time_shift1,unlearning_n_detected
+0,2.1848751448024064,,0.0,1.5078595623498383,91.0,0.0,1.5447138863027183,65.0,0.0,1.5078595623498383,91.0,0.0,2.0,,3.0,,9
